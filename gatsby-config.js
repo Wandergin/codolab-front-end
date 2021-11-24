@@ -28,21 +28,21 @@ module.exports = {
       options: {
         name: `Cara - @lekoarts/gatsby-theme-cara`,
         short_name: `Cara`,
-        description: `Playful and Colorful One-Page portfolio featuring Parallax effects and animations`,
+        description: `Codo Lab - We transform requirements into products.`,
         start_url: `/`,
         background_color: `#141821`,
         theme_color: `#f6ad55`,
         display: `standalone`,
         icons: [
           {
-            src: `/android-chrome-192x192.png`,
+            src: `/codo@192x192.jpg`,
             sizes: `192x192`,
-            type: `image/png`,
+            type: `image/jpg`,
           },
           {
-            src: `/android-chrome-512x512.png`,
+            src: `/codo@512x512.jpg`,
             sizes: `512x512`,
-            type: `image/png`,
+            type: `image/jpg`,
           },
         ],
       },
