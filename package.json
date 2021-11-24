@@ -26,6 +26,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-messenger-chat-plugin": "^1.0.9",
     "react-messenger-customer-chat": "^0.8.0"
   },
   "devDependencies": {

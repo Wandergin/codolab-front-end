@@ -22,11 +22,22 @@ export default function HTML(props) {
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
-        <MessengerCustomerChat
-          pageId="104681471710130"
-          appId="712198986421392"
-        // htmlRef="<REF_STRING>"
-        />
+        <div id="fb-customer-chat" className="fb-customerchat">
+          <MessengerChat
+            pageId='104681471710130'
+            language='en_US'
+            themeColor={'#F2F3G2'}
+            height={24}
+            loggedInGreeting='Hello logged in user!'
+            loggedOutGreeting='Hello stranger!'
+            autoExpand={true}
+            debugMode={false}
+            onMessengerShow={() => { console.log('onMessengerShow') }}
+            onMessengerHide={() => { console.log('onMessengerHide') }}
+            onMessengerDialogShow={() => { console.log('onMessengerDialogShow') }}
+            onMessengerDialogHide={() => { console.log('onMessengerDialogHide') }}
+          />;
+        </div>
         {props.postBodyComponents}
       </body>
     </html>
