@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "cara",
+  "name": "codo",
   "description": "Codo Lab - We transform requirements into products.",
   "version": "0.2.9",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "",
   "license": "0BSD",
-  "starter-name": "gatsby-starter-portfolio-cara",
+  "starter-name": "Codo Lab",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

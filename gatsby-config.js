@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Cara - @lekoarts/gatsby-theme-cara`,
-        short_name: `Cara`,
+        name: `Codo Lab`,
+        short_name: `Codo Lab`,
         description: `Codo Lab - We transform requirements into products.`,
         start_url: `/`,
         background_color: `#141821`,
