@@ -19,7 +19,6 @@ module.exports = {
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
     author: `Codo Lab`,
-    basePath,
   },
   plugins: [
     {
