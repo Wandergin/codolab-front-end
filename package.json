@@ -24,6 +24,7 @@
     "gatsby-plugin-netlify": "^2.4.0",
     "gatsby-plugin-offline": "^3.3.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
+    "node": "^16.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-messenger-chat-plugin": "^1.0.9",
