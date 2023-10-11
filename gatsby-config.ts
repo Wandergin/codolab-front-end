@@ -1,18 +1,15 @@
-require(`dotenv`).config({
-  path: `.env`,
-})
+import type { GatsbyConfig, PluginRef } from "gatsby"
+import "dotenv/config"
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     // You can overwrite values here that are used for the SEO component
-    // Of course you can also add new values here to query them like usual
-    // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-cara/gatsby-config.js
-
+    // You can also add new values here to query them like usual
+    // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-cara/gatsby-config.mjs
     siteTitleAlt: `Codo Lab`,
     siteTitle: `Codo Lab`,
-    siteTitleAlt: `Codo Lab`,
     siteHeadline: `Codo Lab`,
     siteUrl: `https://www.codolab.com/`,
     siteDescription: `Codo Lab - We transform requirements into products.`,
@@ -20,17 +17,12 @@ module.exports = {
     siteImage: `/banner.jpg`,
     author: `Codo Lab`,
   },
+  trailingSlash: `always`,
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-cara`,
       // See the theme's README for all available options
       options: {},
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -40,7 +32,9 @@ module.exports = {
         description: `Codo Lab - We transform requirements into products.`,
         start_url: `/`,
         background_color: `#141821`,
-        theme_color: `#f6ad55`,
+        // This will impact how browsers show your PWA/website
+        // https://css-tricks.com/meta-theme-color-and-trickery/
+        // theme_color: `#f6ad55`,
         display: `standalone`,
         icons: [
           {
@@ -56,16 +50,16 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-netlify`,
+    // You can remove this plugin if you don't need it
     shouldAnalyseBundle && {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      resolve: `gatsby-plugin-webpack-statoscope`,
       options: {
-        analyzerMode: `static`,
-        reportFilename: `_bundle.html`,
-        openAnalyzer: false,
+        saveReportTo: `${__dirname}/public/.statoscope/_bundle.html`,
+        saveStatsTo: `${__dirname}/public/.statoscope/_stats.json`,
+        open: false,
       },
     },
-  ].filter(Boolean),
+  ].filter(Boolean) as Array<PluginRef>,
 }
+
+export default config
