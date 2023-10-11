@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 export default function HTML(props) {
   console.log("hhi")
